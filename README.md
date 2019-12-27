@@ -1,5 +1,4 @@
 # Weather API
----
 _Parsing weather with [weatherstack](https://weatherstack.com/) in your android smartphone._
 ### You can:
   - Enter any city
@@ -10,6 +9,6 @@ You can find my access key in the code and use it safely until it expires. The p
 ### Requirements
 __Android 5.0 and above__
 ### Credits
-Used Android Studio
-Used GSON for parsing
-Used free API from the [weatherstack](https://weatherstack.com/).
+- Used Android Studio
+- Used GSON for parsing
+- Used free API from the [weatherstack](https://weatherstack.com/).
