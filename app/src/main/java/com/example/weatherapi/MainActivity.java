@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     TextView tv;
     EditText et;
+    EditText ak;
     String access_key = "7053bcab08266f2416c00442e68c7985";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.button);
         tv = findViewById(R.id.textView);
         et = findViewById(R.id.city);
+        ak = findViewById(R.id.key);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                             "whoops... Enter city, please!",
                             Toast.LENGTH_LONG).show();
                 Download dl = new Download();
-                dl.execute(et.getText().toString());
+                dl.execute(et.getText().toString(), ak.getText().toString());
                 }
         });
     }
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... cities) {
             String city = cities[0];
+            if(!cities[1].isEmpty()) access_key = cities[1];
+            else access_key = "7053bcab08266f2416c00442e68c7985";
             try {
                 URL url = new URL(
                         "http://api.weatherstack.com/current?" +

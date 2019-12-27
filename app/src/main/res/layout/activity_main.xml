@@ -7,11 +7,29 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/city"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="New_Your, Dubai, San-Francisco, etc."/>
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:hint="New_Your, Dubai, San-Francisco, etc."
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:hint="Custom access key"
+            android:layout_gravity="right"
+            android:textSize="15sp"/>
+
+
+    </LinearLayout>
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -45,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="powered by WeatherStack.com"
-        android:gravity="right"
+        android:gravity="end"
         android:layout_gravity="bottom"
         android:textStyle="italic"
         android:layout_marginRight="10dp"
